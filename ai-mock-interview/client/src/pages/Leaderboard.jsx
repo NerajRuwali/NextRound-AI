@@ -13,7 +13,7 @@ export default function Leaderboard() {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/leaderboard");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/leaderboard`);
         if (response.data.success) {
           setLeaders(response.data.leaderboard);
         }

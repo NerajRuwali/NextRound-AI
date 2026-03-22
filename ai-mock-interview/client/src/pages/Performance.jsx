@@ -42,7 +42,7 @@ function Performance() {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("No token");
         
-        const response = await axios.get("http://localhost:8000/api/interview/performance", {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/interview/performance`, {
           headers: { Authorization: `Bearer ${token}` }
         });
 

@@ -52,7 +52,7 @@ export default function Interview() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/interview/answer",
+        `${import.meta.env.VITE_API_URL}/api/interview/answer`,
         { interviewId: interview._id, question: currentQuestion, answer: finalAnswer },
         { headers: { Authorization: `Bearer ${token}` } }
       );

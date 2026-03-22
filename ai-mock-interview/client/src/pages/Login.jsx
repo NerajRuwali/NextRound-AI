@@ -23,7 +23,7 @@ function Login() {
       const endpoint = isLogin ? "/api/auth/login" : "/api/auth/register";
       const payload = isLogin ? { email, password } : { name, email, password };
 
-      const response = await axios.post(`http://localhost:8000${endpoint}`, payload);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}${endpoint}`, payload);
       
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
