@@ -1,4 +1,4 @@
-# 🚀 NextRound AI – Mock Interview Platform
+# NextRound AI – Mock Interview Platform
 
 An AI-powered mock interview platform that helps users practice real interview questions, improve answers, and get instant feedback.
 
