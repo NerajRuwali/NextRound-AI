@@ -102,13 +102,13 @@ export default function Interview() {
   };
 
   const getScoreColor = (score) => {
-    if (score >= 8) return "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
-    if (score >= 5) return "text-amber-400 bg-amber-500/10 border-amber-500/20";
-    return "text-rose-400 bg-rose-500/10 border-rose-500/20";
+    if (score >= 8) return "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
+    if (score >= 5) return "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
+    return "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
   };
 
   return (
-    <div className="flex flex-col h-screen text-white font-sans bg-transparent z-10 relative">
+    <div className="flex flex-col h-screen text-black font-bold font-sans bg-transparent z-10 relative">
       <Navbar />
 
       <main className="flex-1 flex overflow-hidden mt-20 pt-4 px-4 pb-4 max-w-[1600px] mx-auto w-full gap-4 relative">
@@ -119,11 +119,11 @@ export default function Interview() {
            animate={{ opacity: 1, x: 0 }} 
            className="w-1/3 glass-panel flex flex-col overflow-hidden relative"
         >
-          <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-[50px]"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/10 rounded-full blur-[50px]"></div>
           
           <div className="p-6 border-b border-white/10 shrink-0">
              <div className="flex items-center justify-between mb-4">
-               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/5 text-indigo-300 text-[10px] uppercase font-bold tracking-widest rounded-md border border-white/10">
+               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white/5 text-gray-300 text-[10px] uppercase font-bold tracking-widest rounded-md border border-white/10">
                  <BrainCircuit className="w-3.5 h-3.5" /> Node {currentIdx + 1}
                </div>
                <div className="text-xs font-mono text-white/40">ID:{interview._id?.substring(0,8)}</div>
@@ -134,11 +134,11 @@ export default function Interview() {
           </div>
           
           <div className="flex-1 p-6 overflow-y-auto z-10">
-             <div className="bg-indigo-900/20 border border-indigo-500/20 rounded-xl p-5 backdrop-blur-sm">
-                <h4 className="text-xs font-bold text-indigo-300 uppercase tracking-widest mb-3 flex items-center gap-2">
+             <div className="bg-gray-500/20 border border-yellow-400/20 rounded-xl p-5 backdrop-blur-sm">
+                <h4 className="text-xs font-bold text-gray-300 uppercase tracking-widest mb-3 flex items-center gap-2">
                    <Sparkles className="w-4 h-4" /> AI Constraint Directives
                 </h4>
-                <p className="text-sm text-indigo-200/70 leading-relaxed font-medium">
+                <p className="text-sm text-gray-300/70 leading-relaxed font-medium">
                    The analysis engine is evaluating your architectural decisions strictly at a <strong className="text-white">{interview.experience}</strong> level. Time and space efficiency will heavily impact your node score.
                 </p>
              </div>
@@ -159,7 +159,7 @@ export default function Interview() {
                   <motion.div 
                      initial={{ width: 0 }}
                      animate={{ width: `${progressPercent}%` }}
-                     className="h-full bg-gradient-to-r from-indigo-500 to-purple-500"
+                     className="h-full bg-black border border-yellow-400 text-yellow-400"
                   />
                </div>
                <span className="text-xs font-bold text-white/50">{progressPercent}% Core</span>
@@ -167,8 +167,8 @@ export default function Interview() {
 
             <div className={`px-4 py-1.5 rounded-full border text-sm font-bold flex items-center gap-2 transition-all duration-300 backdrop-blur-md ${
                 timeLeft < 10 && !showFeedback
-                  ? "bg-rose-500/20 border-rose-500/50 text-rose-400 shadow-[0_0_15px_rgba(244,63,94,0.5)] animate-pulse" 
-                  : "bg-white/5 border-white/10 text-white shadow-lg"
+                  ? "bg-yellow-400/20 border-yellow-400/50 text-yellow-400 shadow-[0_0_15px_rgba(244,63,94,0.5)] animate-pulse" 
+                  : "bg-white/5 border-white/10 text-black font-bold shadow-lg"
               }`}>
                 <Clock className="w-4 h-4" />
                 {showFeedback ? 'Evaluation Halted' : `${timeLeft}s Remaining`}
@@ -177,9 +177,9 @@ export default function Interview() {
 
           <div className="glass-panel flex-1 flex flex-col overflow-hidden relative">
             <div className="h-12 border-b border-white/10 bg-black/20 flex items-end px-4 backdrop-blur-md">
-               <div className="px-5 py-2.5 bg-white/5 border-t border-l border-r border-white/10 rounded-t-lg text-xs font-mono text-indigo-100 relative min-w-[140px] flex items-center justify-center shadow-lg">
+               <div className="px-5 py-2.5 bg-white/5 border-t border-l border-r border-white/10 rounded-t-lg text-xs font-mono text-gray-300 relative min-w-[140px] flex items-center justify-center shadow-lg">
                  solution.ts
-                 <div className="absolute top-0 w-full h-0.5 bg-indigo-500 left-0 rounded-t-lg"></div>
+                 <div className="absolute top-0 w-full h-0.5 bg-yellow-400 left-0 rounded-t-lg"></div>
                </div>
                <div className="px-5 py-2.5 text-xs font-mono text-white/30">terminal.sh</div>
             </div>
@@ -187,7 +187,7 @@ export default function Interview() {
             <div className="flex-1 relative bg-[#0c1222]/80">
               <textarea
                 ref={textareaRef}
-                className="w-full h-full bg-transparent text-indigo-100 font-mono text-sm leading-relaxed resize-none focus:outline-none focus:ring-0 p-6 z-10 relative selection:bg-indigo-500/30"
+                className="w-full h-full bg-transparent text-gray-300 font-mono text-sm leading-relaxed resize-none focus:outline-none focus:ring-0 p-6 z-10 relative selection:bg-yellow-500/30"
                 placeholder="// Initialize optimized algorithm..."
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
@@ -212,7 +212,7 @@ export default function Interview() {
                  onClick={handleSubmitAnswer}
                  disabled={submitting || showFeedback}
                  className={`px-8 py-2.5 text-white font-bold text-sm rounded-lg flex items-center gap-2 transition-all ${
-                   submitting || showFeedback ? "opacity-50 cursor-not-allowed bg-white/10 border border-white/10" : "bg-indigo-500 hover:bg-indigo-400 shadow-[0_0_20px_rgba(99,102,241,0.4)]"
+                   submitting || showFeedback ? "opacity-50 cursor-not-allowed bg-white/10 border border-white/10" : "bg-yellow-400 hover:bg-yellow-400 shadow-[0_0_20px_rgba(99,102,241,0.4)]"
                  }`}
                >
                  {submitting ? (
@@ -240,7 +240,7 @@ export default function Interview() {
                         Evaluation Score: {latestFeedback.score} / 10
                      </div>
                      <h3 className="text-2xl font-bold text-white mb-4">Node Analyzed</h3>
-                     <p className="text-indigo-100/80 leading-relaxed mb-6 bg-white/5 p-6 rounded-xl border border-white/10">
+                     <p className="text-gray-300/80 leading-relaxed mb-6 bg-white/5 p-6 rounded-xl border border-white/10">
                        {latestFeedback.feedback}
                      </p>
                      
@@ -249,8 +249,8 @@ export default function Interview() {
                          <h4 className="text-sm font-bold text-white/50 uppercase tracking-widest mb-3">Architectural Improvements</h4>
                          <ul className="space-y-2">
                             {latestFeedback.suggestions.map((sug, i) => (
-                               <li key={i} className="flex gap-3 text-sm text-indigo-200/90 items-start">
-                                  <ChevronRight className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" /> {sug}
+                               <li key={i} className="flex gap-3 text-sm text-gray-300/90 items-start">
+                                  <ChevronRight className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" /> {sug}
                                </li>
                             ))}
                          </ul>

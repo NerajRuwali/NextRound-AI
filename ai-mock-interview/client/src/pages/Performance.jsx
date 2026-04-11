@@ -71,7 +71,7 @@ function Performance() {
       return (
         <div className="bg-[#0f172a]/90 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-2xl">
           <p className="text-white font-mono text-xs mb-1 uppercase tracking-widest opacity-50">{label} Logic Node</p>
-          <p className="text-2xl font-black text-indigo-400">
+          <p className="text-2xl font-black text-yellow-400">
              {payload[0].value} <span className="text-sm font-medium text-white/50">/ 10</span>
           </p>
         </div>
@@ -99,12 +99,12 @@ function Performance() {
         {/* Header Block */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
            <div className="flex items-center gap-4">
-               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 shadow-lg flex items-center justify-center text-white shrink-0">
+               <div className="w-12 h-12 rounded-2xl bg-black border border-yellow-400 text-yellow-400 shadow-lg flex items-center justify-center text-white shrink-0">
                  <Activity className="w-6 h-6" />
                </div>
                <div>
                  <h1 className="text-3xl font-bold tracking-tight text-white mb-1">Performance Analytics</h1>
-                 <p className="text-indigo-200/50 text-sm font-medium">Tracking historical evaluation accuracy across your most recent FAANG session.</p>
+                 <p className="text-gray-300/50 text-sm font-medium">Tracking historical evaluation accuracy across your most recent FAANG session.</p>
                </div>
            </div>
            
@@ -135,10 +135,10 @@ function Performance() {
                  <DatabaseBackup className="w-10 h-10" />
               </div>
               <h2 className="text-2xl font-bold text-white mb-3">No performance data found</h2>
-              <p className="text-indigo-200/50 max-w-md mx-auto mb-8 leading-relaxed">
+              <p className="text-gray-300/50 max-w-md mx-auto mb-8 leading-relaxed">
                  You haven't completed a full NextRound AI architecture evaluation yet. Spin up a session to establish your performance baseline.
               </p>
-              <a href="/dashboard" className="px-8 py-3.5 bg-indigo-500 hover:bg-indigo-400 text-white font-bold rounded-full shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all flex items-center gap-2">
+              <a href="/dashboard" className="px-8 py-3.5 bg-yellow-400 hover:bg-yellow-400 text-black font-bold font-bold rounded-full shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all flex items-center gap-2">
                  Initialize Session <ChevronRight className="w-4 h-4" />
               </a>
            </motion.div>
@@ -148,29 +148,29 @@ function Performance() {
               {/* Stat Tiles */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                  <motion.div variants={itemVars} className="glass-panel p-8 relative overflow-hidden group">
-                    <div className="absolute -right-4 -top-4 w-24 h-24 bg-indigo-500/20 rounded-full blur-2xl group-hover:bg-indigo-500/30 transition-colors"></div>
-                    <span className="text-[10px] uppercase font-bold text-white/50 tracking-widest mb-2 flex items-center gap-2"><Target className="w-3 h-3 text-indigo-400"/> Aggregate Threshold</span>
+                    <div className="absolute -right-4 -top-4 w-24 h-24 bg-yellow-400/20 rounded-full blur-2xl group-hover:bg-yellow-400/30 transition-colors"></div>
+                    <span className="text-[10px] uppercase font-bold text-white/50 tracking-widest mb-2 flex items-center gap-2"><Target className="w-3 h-3 text-yellow-400"/> Aggregate Threshold</span>
                     <span className="text-5xl font-black text-white font-mono mt-1 block">{summary.totalScore}</span>
                  </motion.div>
                  
                  <motion.div variants={itemVars} className="glass-panel p-8 relative overflow-hidden group">
-                    <div className="absolute -right-4 -top-4 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl group-hover:bg-purple-500/30 transition-colors"></div>
-                    <span className="text-[10px] uppercase font-bold text-white/50 tracking-widest mb-2 flex items-center gap-2"><BrainCircuit className="w-3 h-3 text-purple-400"/> Primary Vector</span>
+                    <div className="absolute -right-4 -top-4 w-24 h-24 bg-yellow-400/20 rounded-full blur-2xl group-hover:bg-yellow-400/30 transition-colors"></div>
+                    <span className="text-[10px] uppercase font-bold text-white/50 tracking-widest mb-2 flex items-center gap-2"><BrainCircuit className="w-3 h-3 text-yellow-400"/> Primary Vector</span>
                     <span className="text-2xl font-bold text-white mt-2 block truncate block">{summary.role}</span>
                  </motion.div>
                  
                  <motion.div variants={itemVars} className="glass-panel p-8 relative overflow-hidden group">
-                    <div className="absolute -right-4 -top-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-colors"></div>
-                    <span className="text-[10px] uppercase font-bold text-white/50 tracking-widest mb-2 flex items-center gap-2"><Activity className="w-3 h-3 text-emerald-400"/> Experience Bracket</span>
+                    <div className="absolute -right-4 -top-4 w-24 h-24 bg-yellow-400/10 rounded-full blur-2xl group-hover:bg-yellow-400/20 transition-colors"></div>
+                    <span className="text-[10px] uppercase font-bold text-white/50 tracking-widest mb-2 flex items-center gap-2"><Activity className="w-3 h-3 text-yellow-400"/> Experience Bracket</span>
                     <span className="text-2xl font-bold text-white mt-2 block truncate">{summary.experience}</span>
                  </motion.div>
               </div>
 
               {/* Main Graph */}
               <motion.div variants={itemVars} className="glass-panel flex-1 p-8 lg:p-12 min-h-[450px] flex flex-col relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-indigo-500/5 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-yellow-400/5 pointer-events-none"></div>
                 <h3 className="font-bold text-white/80 mb-8 flex items-center gap-2 relative z-10 text-sm tracking-wide">
-                   <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div> Node Accuracy Distribution
+                   <div className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></div> Node Accuracy Distribution
                 </h3>
                 
                 <div className="flex-1 w-full h-full relative z-10">

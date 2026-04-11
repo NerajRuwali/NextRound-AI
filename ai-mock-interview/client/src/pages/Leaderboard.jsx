@@ -28,16 +28,16 @@ export default function Leaderboard() {
 
   const getRankStyles = (rank) => {
     switch (rank) {
-      case 1: return "bg-gradient-to-br from-amber-300 to-amber-600 text-black border-amber-200 shadow-[0_0_20px_rgba(251,191,36,0.3)]";
-      case 2: return "bg-gradient-to-br from-slate-300 to-slate-500 text-black border-slate-200 shadow-[0_0_20px_rgba(148,163,184,0.3)]";
-      case 3: return "bg-gradient-to-br from-orange-400 to-orange-700 text-white border-orange-300 shadow-[0_0_20px_rgba(251,146,60,0.3)]";
-      default: return "bg-white/5 text-indigo-300 border-white/10";
+      case 1: return "bg-black border border-yellow-400 text-yellow-400 text-black border-yellow-400 shadow-[0_0_20px_rgba(251,191,36,0.3)]";
+      case 2: return "bg-black border border-yellow-400 text-yellow-400 text-black border-slate-200 shadow-[0_0_20px_rgba(148,163,184,0.3)]";
+      case 3: return "bg-black border border-yellow-400 text-yellow-400 border-orange-300 shadow-[0_0_20px_rgba(251,146,60,0.3)]";
+      default: return "bg-white/5 text-gray-300 border-white/10";
     }
   };
 
   const getRankIcon = (rank) => {
     switch (rank) {
-      case 1: return <Trophy className="w-5 h-5 text-amber-500" />;
+      case 1: return <Trophy className="w-5 h-5 text-yellow-400" />;
       case 2: return <Medal className="w-5 h-5 text-slate-400" />;
       case 3: return <Medal className="w-5 h-5 text-orange-400" />;
       default: return <span className="w-5 h-5 flex items-center justify-center font-bold text-white/30">#</span>;
@@ -63,12 +63,12 @@ export default function Leaderboard() {
         {/* Header Block */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
            <div className="flex items-center gap-4">
-               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 shadow-lg flex items-center justify-center text-white shrink-0">
+               <div className="w-12 h-12 rounded-2xl bg-black border border-yellow-400 text-yellow-400 shadow-lg flex items-center justify-center text-white shrink-0">
                  <Trophy className="w-6 h-6" />
                </div>
                <div>
                  <h1 className="text-3xl font-bold tracking-tight text-white mb-1">Top Performers</h1>
-                 <p className="text-indigo-200/50 text-sm font-medium">Global rankings evaluated across all architectural nodes and algorithmic accuracy.</p>
+                 <p className="text-gray-300/50 text-sm font-medium">Global rankings evaluated across all architectural nodes and algorithmic accuracy.</p>
                </div>
            </div>
            
@@ -84,7 +84,7 @@ export default function Leaderboard() {
         <div className="glass-panel p-2 md:p-6 overflow-hidden flex-1 flex flex-col relative">
            
            {/* Decorative Background */}
-           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-400/5 rounded-full blur-[100px] pointer-events-none"></div>
 
            {/* Table Header */}
            <div className="grid grid-cols-12 gap-4 px-6 py-4 border-b border-white/10 text-[10px] md:text-xs font-bold text-white/50 uppercase tracking-widest sticky top-0 bg-[#0f172a]/80 backdrop-blur-md z-10">
@@ -137,14 +137,14 @@ export default function Leaderboard() {
                         </div>
                         <div className="flex flex-col">
                            <span className="font-bold text-white text-base truncate pr-2">{user.username}</span>
-                           {user.rank === 1 && <span className="text-[10px] text-amber-400 font-bold tracking-widest uppercase">Global Rank 1</span>}
+                           {user.rank === 1 && <span className="text-[10px] text-yellow-400 font-bold tracking-widest uppercase">Global Rank 1</span>}
                         </div>
                      </div>
 
                      {/* Avg Score */}
                      <div className="col-span-4 md:col-span-3 flex justify-end md:justify-start items-center">
                         <div className="px-3 md:px-4 py-1.5 md:py-2 bg-[#020617] rounded-lg border border-white/10 flex items-center gap-2">
-                           <Star className="w-3.5 h-3.5 text-indigo-400 hidden sm:block" />
+                           <Star className="w-3.5 h-3.5 text-yellow-400 hidden sm:block" />
                            <span className="font-mono font-bold text-white text-sm">{user.averageScore} <span className="text-white/30 text-xs hidden sm:inline">/ 10</span></span>
                         </div>
                      </div>

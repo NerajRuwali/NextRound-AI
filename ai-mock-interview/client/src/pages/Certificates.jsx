@@ -39,10 +39,10 @@ export default function Certificates() {
   ];
 
   const getTierStyles = (tier, status) => {
-     if (status === "locked") return "border-white/10 from-gray-900 to-black text-gray-500 shadow-none";
+     if (status === "locked") return "border-white/10 from-gray-900 to-black text-gray-300 shadow-none";
      switch (tier) {
-       case "gold": return "border-amber-400/30 from-amber-500/10 via-amber-700/5 to-[#0f172a] shadow-[0_0_40px_rgba(251,191,36,0.15)]";
-       case "silver": return "border-blue-400/30 from-blue-500/10 via-blue-700/5 to-[#0f172a] shadow-[0_0_40px_rgba(96,165,250,0.15)]";
+       case "gold": return "border-yellow-400/30 from-yellow-400/10 via-yellow-400/5 to-[#0f172a] shadow-[0_0_40px_rgba(251,191,36,0.15)]";
+       case "silver": return "border-yellow-400/30 from-yellow-400/10 via-yellow-400/5 to-[#0f172a] shadow-[0_0_40px_rgba(96,165,250,0.15)]";
        case "platinum": return "border-fuchsia-400/30 from-fuchsia-500/10 via-fuchsia-700/5 to-[#0f172a] shadow-[0_0_40px_rgba(232,121,249,0.15)]";
        default: return "border-white/10 from-white/5 to-[#0f172a]";
      }
@@ -59,14 +59,14 @@ export default function Certificates() {
   };
 
   return (
-    <div className="flex flex-col text-white font-sans selection:bg-indigo-500/30">
+    <div className="flex flex-col text-white font-sans selection:bg-yellow-500/30">
       
       {/* Header */}
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
         <h1 className="text-4xl font-black tracking-tight mb-3 flex items-center gap-3">
-          <Award className="w-8 h-8 text-indigo-400" /> Digital Credentials
+          <Award className="w-8 h-8 text-yellow-400" /> Digital Credentials
         </h1>
-        <p className="text-indigo-200/60 font-medium max-w-xl text-sm leading-relaxed">
+        <p className="text-gray-300/60 font-medium max-w-xl text-sm leading-relaxed">
           Your indisputable, AI-verified proof of architectural and algorithmic mastery. Display these tokens to recruiters to bypass standard screening walls.
         </p>
       </motion.div>
@@ -96,7 +96,7 @@ export default function Certificates() {
 
                 <div className="flex justify-between items-start mb-6">
                    <div className={`px-3 py-1 text-[10px] uppercase tracking-widest font-bold rounded-full border flex items-center gap-1.5 ${
-                      cert.status === "unlocked" ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" : "bg-black/40 text-gray-500 border-white/10"
+                      cert.status === "unlocked" ? "bg-yellow-400/10 text-yellow-400 border-yellow-400/20" : "bg-black/40 text-gray-300 border-white/10"
                    }`}>
                       {cert.status === "unlocked" ? <CheckCircle2 className="w-3 h-3"/> : <Lock className="w-3 h-3"/>}
                       {cert.status}

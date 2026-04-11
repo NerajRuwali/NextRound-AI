@@ -41,12 +41,12 @@ function Login() {
       
       {/* Left Pane - Branding */}
       <div className="hidden lg:flex w-1/2 bg-zinc-950 flex-col justify-between p-12 relative overflow-hidden text-zinc-50 border-r border-zinc-800">
-        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-yellow-400/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-yellow-400/10 rounded-full blur-[100px] pointer-events-none"></div>
         
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-16">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-[0_0_20px_rgba(79,70,229,0.5)]">
+            <div className="w-10 h-10 rounded-xl bg-yellow-400 flex items-center justify-center text-black font-bold font-bold text-lg shadow-[0_0_20px_rgba(79,70,229,0.5)]">
               AI
             </div>
             <span className="text-2xl font-bold tracking-tight">NextRound AI</span>
@@ -75,7 +75,7 @@ function Login() {
         <div className="w-full max-w-md animate-in fade-in duration-500">
           
           <div className="lg:hidden flex items-center gap-3 mb-10 justify-center">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-[0_0_20px_rgba(79,70,229,0.5)]">
+            <div className="w-10 h-10 rounded-xl bg-yellow-400 flex items-center justify-center text-black font-bold font-bold text-lg shadow-[0_0_20px_rgba(79,70,229,0.5)]">
               AI
             </div>
             <span className="text-2xl font-bold tracking-tight text-gray-900 dark:text-zinc-50">NextRound AI</span>
@@ -85,7 +85,7 @@ function Login() {
             <h2 className="text-3xl font-bold text-gray-900 dark:text-zinc-100 tracking-tight mb-2">
               {isLogin ? "Welcome back" : "Create your account"}
             </h2>
-            <p className="text-gray-500 dark:text-zinc-400">
+            <p className="text-gray-300 dark:text-zinc-400">
               {isLogin ? "Enter your credentials to access your session." : "Start your journey to interview mastery."}
             </p>
           </div>
@@ -98,7 +98,7 @@ function Login() {
                   type="text"
                   required
                   placeholder="John Doe"
-                  className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800 text-gray-900 dark:text-zinc-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+                  className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800 text-gray-900 dark:text-zinc-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 transition-all"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -111,7 +111,7 @@ function Login() {
                 type="email"
                 required
                 placeholder="developer@example.com"
-                className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800 text-gray-900 dark:text-zinc-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+                className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800 text-gray-900 dark:text-zinc-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 transition-all"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -123,7 +123,7 @@ function Login() {
                 type="password"
                 required
                 placeholder="••••••••"
-                className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800 text-gray-900 dark:text-zinc-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all font-mono"
+                className="w-full px-4 py-3 bg-gray-50 dark:bg-zinc-900 border border-gray-300 dark:border-zinc-800 text-gray-900 dark:text-zinc-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-400/50 transition-all font-mono"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -133,7 +133,7 @@ function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className={`w-full py-3.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition-all shadow-md dark:shadow-[0_4px_14px_0_rgba(79,70,229,0.39)] ${loading ? 'opacity-50 cursor-not-allowed shadow-none' : ''}`}
+                className={`w-full py-3.5 px-4 bg-yellow-400 hover:bg-gray-500 text-black font-bold font-medium rounded-xl transition-all shadow-md dark:shadow-[0_4px_14px_0_rgba(79,70,229,0.39)] ${loading ? 'opacity-50 cursor-not-allowed shadow-none' : ''}`}
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
@@ -147,11 +147,11 @@ function Login() {
             </div>
           </form>
 
-          <div className="mt-8 text-center text-sm text-gray-500 dark:text-zinc-400">
+          <div className="mt-8 text-center text-sm text-gray-300 dark:text-zinc-400">
             {isLogin ? "Don't have an account? " : "Already have an account? "}
             <button
               onClick={handleToggle}
-              className="text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+              className="text-yellow-400 dark:text-yellow-400 font-semibold hover:text-gray-300 dark:hover:text-gray-300 transition-colors"
             >
               {isLogin ? "Sign up" : "Sign in"}
             </button>

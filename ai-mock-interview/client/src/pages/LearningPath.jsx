@@ -16,11 +16,11 @@ function LearningPath() {
        <div className="mb-10 lg:flex items-end justify-between border-b border-gray-200 dark:border-zinc-800 pb-6 transition-colors">
          <div>
             <h1 className="text-3xl font-bold text-gray-900 dark:text-zinc-100 mb-3 tracking-tight">Structured Learning Path</h1>
-            <p className="text-gray-500 dark:text-zinc-500">A comprehensive 90-day roadmap from fundamentals to FAANG-ready.</p>
+            <p className="text-gray-300 dark:text-zinc-500">A comprehensive 90-day roadmap from fundamentals to FAANG-ready.</p>
          </div>
          <div className="mt-4 lg:mt-0 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 px-4 py-2 rounded-xl shadow-sm transition-colors text-sm">
-            <span className="text-gray-500 dark:text-zinc-500 font-medium">Path Progress:</span>
-            <span className="ml-2 font-bold text-indigo-600 dark:text-indigo-400">14%</span>
+            <span className="text-gray-300 dark:text-zinc-500 font-medium">Path Progress:</span>
+            <span className="ml-2 font-bold text-yellow-400 dark:text-yellow-400">14%</span>
          </div>
        </div>
 
@@ -34,8 +34,8 @@ function LearningPath() {
                    
                    {/* Status Node */}
                    <div className={`absolute left-[7px] md:left-[23px] top-1 w-8 h-8 rounded-full border-4 border-gray-50 dark:border-zinc-950 flex items-center justify-center transition-colors z-10 ${
-                      mod.status === 'completed' ? 'bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.4)]' : 
-                      mod.status === 'in-progress' ? 'bg-indigo-600 shadow-[0_0_15px_rgba(79,70,229,0.4)] animate-pulse' : 
+                      mod.status === 'completed' ? 'bg-yellow-400 shadow-[0_0_15px_rgba(16,185,129,0.4)]' : 
+                      mod.status === 'in-progress' ? 'bg-yellow-400 shadow-[0_0_15px_rgba(79,70,229,0.4)] animate-pulse' : 
                       'bg-gray-200 dark:bg-zinc-800'
                    }`}>
                       {mod.status === 'completed' && <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>}
@@ -44,33 +44,33 @@ function LearningPath() {
 
                    {/* Content Box */}
                    <div className={`p-6 rounded-2xl border transition-all duration-300 shadow-sm ${
-                      mod.status === 'completed' ? 'bg-white dark:bg-zinc-900/50 border-emerald-200 dark:border-emerald-500/30' :
-                      mod.status === 'in-progress' ? 'bg-white dark:bg-zinc-900 border-indigo-300 dark:border-indigo-500/50 -translate-y-1 shadow-md' :
+                      mod.status === 'completed' ? 'bg-white dark:bg-zinc-900/50 border-yellow-400 dark:border-yellow-400/30' :
+                      mod.status === 'in-progress' ? 'bg-white dark:bg-zinc-900 border-gray-500 dark:border-yellow-400/50 -translate-y-1 shadow-md' :
                       'bg-gray-50 dark:bg-zinc-900/20 border-gray-200 dark:border-zinc-800 opacity-70'
                    }`}>
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                         <h3 className={`font-bold text-lg ${mod.status === 'locked' ? 'text-gray-500 dark:text-zinc-500' : 'text-gray-900 dark:text-zinc-100'}`}>
+                         <h3 className={`font-bold text-lg ${mod.status === 'locked' ? 'text-gray-300 dark:text-zinc-500' : 'text-gray-900 dark:text-zinc-100'}`}>
                             {mod.title}
                          </h3>
                          <span className="px-3 py-1 bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-400 text-xs font-mono font-bold rounded-lg shrink-0 transition-colors">
                             {mod.duration}
                          </span>
                       </div>
-                      <p className={`text-sm leading-relaxed mb-6 ${mod.status === 'locked' ? 'text-gray-400 dark:text-zinc-600' : 'text-gray-600 dark:text-zinc-400'}`}>
+                      <p className={`text-sm leading-relaxed mb-6 ${mod.status === 'locked' ? 'text-gray-300 dark:text-zinc-600' : 'text-gray-600 dark:text-zinc-400'}`}>
                          {mod.desc}
                       </p>
                       
                       {mod.status === 'in-progress' ? (
-                         <button className="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm rounded-lg shadow-[0_0_15px_rgba(79,70,229,0.3)] transition-colors flex items-center gap-2">
+                         <button className="px-6 py-2 bg-yellow-400 hover:bg-gray-500 text-black font-bold font-medium text-sm rounded-lg shadow-[0_0_15px_rgba(79,70,229,0.3)] transition-colors flex items-center gap-2">
                            Continue Learning
                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                          </button>
                       ) : mod.status === 'completed' ? (
-                         <button className="px-4 py-1.5 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20 font-medium text-xs rounded transition-colors">
+                         <button className="px-4 py-1.5 bg-yellow-400 dark:bg-yellow-400/10 text-yellow-400 dark:text-yellow-400 border border-yellow-400 dark:border-yellow-400/20 font-medium text-xs rounded transition-colors">
                            Review Module
                          </button>
                       ) : (
-                         <button disabled className="px-4 py-1.5 bg-gray-200 dark:bg-zinc-800 text-gray-400 dark:text-zinc-500 font-medium text-xs rounded flex items-center gap-2 cursor-not-allowed transition-colors">
+                         <button disabled className="px-4 py-1.5 bg-gray-200 dark:bg-zinc-800 text-gray-300 dark:text-zinc-500 font-medium text-xs rounded flex items-center gap-2 cursor-not-allowed transition-colors">
                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                            Locked
                          </button>

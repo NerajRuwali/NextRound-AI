@@ -21,17 +21,17 @@ function Referrals() {
     <div className="animate-in fade-in duration-300 h-full flex flex-col">
        <div className="mb-10 border-b border-gray-200 dark:border-zinc-800 pb-6 transition-colors">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-zinc-100 mb-3 tracking-tight">Refer & Earn</h1>
-          <p className="text-gray-500 dark:text-zinc-500">Invite friends to practice. You both get 50 premium mock interview credits when they join.</p>
+          <p className="text-gray-300 dark:text-zinc-500">Invite friends to practice. You both get 50 premium mock interview credits when they join.</p>
        </div>
 
        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
           
           {/* Main Referral Card */}
-          <div className="lg:col-span-2 bg-gradient-to-br from-indigo-600 to-blue-700 rounded-2xl p-8 text-white shadow-lg relative overflow-hidden flex flex-col justify-center">
+          <div className="lg:col-span-2 bg-black border border-yellow-400 text-yellow-400 rounded-2xl p-8 text-white shadow-lg relative overflow-hidden flex flex-col justify-center">
              <div className="absolute top-[-20%] right-[-10%] w-64 h-64 bg-white/10 rounded-full blur-[40px] pointer-events-none"></div>
              
              <h2 className="text-2xl font-bold mb-2">Give 50, Get 50.</h2>
-             <p className="text-indigo-100 mb-8 max-w-md text-sm leading-relaxed">
+             <p className="text-gray-300 mb-8 max-w-md text-sm leading-relaxed">
                 Share your unique code. Once your friend completes their first mock interview, you'll instantly unlock premium API credits.
              </p>
 
@@ -39,7 +39,7 @@ function Referrals() {
                 <div className="px-4 font-mono text-sm tracking-wider w-full truncate text-white">{inviteLink}</div>
                 <button 
                   onClick={handleCopy}
-                  className="px-6 py-2.5 bg-white text-indigo-700 font-bold text-sm rounded-lg hover:bg-gray-50 transition-colors shadow-sm whitespace-nowrap"
+                  className="px-6 py-2.5 bg-white text-gray-300 font-bold text-sm rounded-lg hover:bg-gray-50 transition-colors shadow-sm whitespace-nowrap"
                 >
                   {copied ? "Copied!" : "Copy Link"}
                 </button>
@@ -49,12 +49,12 @@ function Referrals() {
           {/* Stats Column */}
           <div className="grid grid-rows-2 gap-6">
              <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm transition-colors flex flex-col justify-center">
-                <span className="text-[10px] uppercase font-bold text-gray-400 dark:text-zinc-500 tracking-widest mb-1">Total Earned Credits</span>
+                <span className="text-[10px] uppercase font-bold text-gray-300 dark:text-zinc-500 tracking-widest mb-1">Total Earned Credits</span>
                 <span className="text-4xl font-black text-gray-900 dark:text-zinc-100 font-mono">100</span>
              </div>
              <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm transition-colors flex flex-col justify-center">
-                <span className="text-[10px] uppercase font-bold text-gray-400 dark:text-zinc-500 tracking-widest mb-1">Friends Joined</span>
-                <span className="text-4xl font-black text-gray-900 dark:text-zinc-100 font-mono">2<span className="text-xl text-gray-400 dark:text-zinc-600 ml-1">/ 10</span></span>
+                <span className="text-[10px] uppercase font-bold text-gray-300 dark:text-zinc-500 tracking-widest mb-1">Friends Joined</span>
+                <span className="text-4xl font-black text-gray-900 dark:text-zinc-100 font-mono">2<span className="text-xl text-gray-300 dark:text-zinc-600 ml-1">/ 10</span></span>
              </div>
           </div>
 
@@ -64,12 +64,12 @@ function Referrals() {
        <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl shadow-sm overflow-hidden transition-colors flex-1">
           <div className="px-6 py-5 border-b border-gray-200 dark:border-zinc-800 transition-colors flex items-center justify-between">
              <h3 className="font-bold text-gray-900 dark:text-zinc-100">Referral History</h3>
-             <span className="text-xs text-gray-500 dark:text-zinc-500 font-medium">Auto-updates every 24h</span>
+             <span className="text-xs text-gray-300 dark:text-zinc-500 font-medium">Auto-updates every 24h</span>
           </div>
           
           <div className="overflow-x-auto">
              <table className="w-full text-left text-sm whitespace-nowrap">
-                <thead className="bg-gray-50/50 dark:bg-zinc-950/50 text-gray-400 dark:text-zinc-500 font-semibold tracking-widest uppercase text-[10px] transition-colors">
+                <thead className="bg-gray-50/50 dark:bg-zinc-950/50 text-gray-300 dark:text-zinc-500 font-semibold tracking-widest uppercase text-[10px] transition-colors">
                    <tr>
                       <th className="px-6 py-4">Referred User</th>
                       <th className="px-6 py-4">Date Sent</th>
@@ -81,18 +81,18 @@ function Referrals() {
                    {REFERRAL_HISTORY.map(ref => (
                       <tr key={ref.id} className="hover:bg-gray-50 dark:hover:bg-zinc-800/20 transition-colors group">
                          <td className="px-6 py-4 text-gray-900 dark:text-zinc-200 font-medium">{ref.email}</td>
-                         <td className="px-6 py-4 text-gray-500 dark:text-zinc-500 font-mono">{ref.date}</td>
+                         <td className="px-6 py-4 text-gray-300 dark:text-zinc-500 font-mono">{ref.date}</td>
                          <td className="px-6 py-4">
                             <span className={`px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-widest ${
                                ref.status === 'Joined' 
-                                 ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20' 
-                                 : 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-500/20'
+                                 ? 'bg-yellow-400 dark:bg-yellow-400/10 text-yellow-400 dark:text-yellow-400 border border-yellow-400 dark:border-yellow-400/20' 
+                                 : 'bg-yellow-400 dark:bg-yellow-400/10 text-yellow-400 dark:text-yellow-400 border border-yellow-400 dark:border-yellow-400/20'
                             }`}>
                                {ref.status}
                             </span>
                          </td>
                          <td className={`px-6 py-4 text-right font-bold font-mono ${
-                            ref.reward.startsWith('+') ? 'text-indigo-600 dark:text-indigo-400' : 'text-gray-400 dark:text-zinc-600'
+                            ref.reward.startsWith('+') ? 'text-yellow-400 dark:text-yellow-400' : 'text-gray-300 dark:text-zinc-600'
                          }`}>
                             {ref.reward}
                          </td>

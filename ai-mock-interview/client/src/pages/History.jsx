@@ -38,9 +38,9 @@ export default function History() {
 
   const getScoreColor = (score, max) => {
     const ratio = score / max;
-    if (ratio >= 0.8) return "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
-    if (ratio >= 0.5) return "text-amber-400 bg-amber-500/10 border-amber-500/20";
-    return "text-rose-400 bg-rose-500/10 border-rose-500/20";
+    if (ratio >= 0.8) return "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
+    if (ratio >= 0.5) return "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
+    return "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
   };
 
   const containerVars = {
@@ -54,7 +54,7 @@ export default function History() {
   };
 
   return (
-    <div className="min-h-screen text-white font-sans flex flex-col pt-20 selection:bg-indigo-500/30">
+    <div className="min-h-screen text-black font-bold font-sans flex flex-col pt-20 selection:bg-yellow-500/30">
       <Navbar />
 
       <main className="flex-1 max-w-7xl mx-auto w-full p-6 lg:p-10 relative z-10 flex flex-col">
@@ -62,12 +62,12 @@ export default function History() {
         {/* Header Block */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
            <div className="flex items-center gap-4">
-               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 shadow-lg flex items-center justify-center text-white shrink-0">
+               <div className="w-12 h-12 rounded-2xl bg-black border border-yellow-400 text-yellow-400 shadow-lg flex items-center justify-center text-white shrink-0">
                  <HistoryIcon className="w-6 h-6" />
                </div>
                <div>
                  <h1 className="text-3xl font-bold tracking-tight text-white mb-1">Session History</h1>
-                 <p className="text-indigo-200/50 text-sm font-medium">Review past architectural mock interviews and track your node progression.</p>
+                 <p className="text-gray-300/50 text-sm font-medium">Review past architectural mock interviews and track your node progression.</p>
                </div>
            </div>
            
@@ -97,7 +97,7 @@ export default function History() {
                  <div className="w-24 h-24 border border-white/10 rounded-full animate-[spin_4s_linear_infinite]"></div>
               </div>
               <h2 className="text-2xl font-bold text-white mb-3">No History Found</h2>
-              <p className="text-indigo-200/50 max-w-md mx-auto mb-8 leading-relaxed">
+              <p className="text-gray-300/50 max-w-md mx-auto mb-8 leading-relaxed">
                  You haven't initialized any FAANG evaluation sessions yet. Your telemetry data will populate here once you complete an interview.
               </p>
            </motion.div>
@@ -114,11 +114,11 @@ export default function History() {
                       onClick={() => isCompleted && setSelectedSession(session)}
                       className={`glass-card p-8 rounded-[2rem] border border-white/10 flex flex-col relative overflow-hidden transition-all duration-300 ${isCompleted ? "cursor-pointer group" : "cursor-default opacity-70"}`}
                     >
-                       <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none"></div>
+                       <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/5 rounded-full blur-2xl pointer-events-none"></div>
 
                        <div className="flex justify-between items-start mb-6 align-top">
                           <div className={`px-3 py-1 text-[10px] uppercase tracking-widest font-bold rounded-full border flex items-center gap-1.5 ${
-                             isCompleted ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/30" : "bg-black/40 text-gray-500 border-white/10"
+                             isCompleted ? "bg-yellow-400/10 text-yellow-400 border-yellow-400/30" : "bg-black/40 text-gray-300 border-white/10"
                           }`}>
                             {isCompleted ? <CheckCircle2 className="w-3 h-3"/> : <XCircle className="w-3 h-3"/>}
                             {isCompleted ? "Completed" : "Abandoned"}
@@ -127,7 +127,7 @@ export default function History() {
                        </div>
 
                        <h3 className="text-xl font-bold text-white mb-1 line-clamp-1">{session.role}</h3>
-                       <p className="text-sm font-medium text-indigo-200/50 mb-6 flex items-center gap-2">
+                       <p className="text-sm font-medium text-gray-300/50 mb-6 flex items-center gap-2">
                           <Target className="w-4 h-4" /> {session.experience} Bracket
                        </p>
 
@@ -178,7 +178,7 @@ export default function History() {
 
                <div className="mb-8 border-b border-white/10 pb-6 shrink-0">
                   <div className="flex items-center gap-3 mb-2">
-                     <div className="px-3 py-1 bg-indigo-500/20 text-indigo-300 text-xs font-bold uppercase tracking-widest rounded-md border border-indigo-500/30">
+                     <div className="px-3 py-1 bg-yellow-400/20 text-gray-300 text-xs font-bold uppercase tracking-widest rounded-md border border-yellow-400/30">
                         {selectedSession.experience}
                      </div>
                      <div className="text-xs font-mono text-white/40">{formatDate(selectedSession.createdAt)}</div>
@@ -192,7 +192,7 @@ export default function History() {
                      <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                         <div className="flex items-start justify-between gap-4 mb-4">
                            <h4 className="font-bold text-white text-lg leading-snug">
-                              <span className="text-indigo-400 font-mono mr-2">Q{idx+1}.</span> 
+                              <span className="text-yellow-400 font-mono mr-2">Q{idx+1}.</span> 
                               {ans.question}
                            </h4>
                            <div className={`px-3 py-1 rounded-lg border font-black text-sm shrink-0 ${getScoreColor(ans.score, 10)}`}>
@@ -207,13 +207,13 @@ export default function History() {
 
                         <div>
                            <div className="text-[10px] text-white/30 uppercase font-bold tracking-widest mb-2">AI Node Analysis</div>
-                           <p className="text-indigo-200 text-sm leading-relaxed mb-4">{ans.feedback}</p>
+                           <p className="text-gray-300 text-sm leading-relaxed mb-4">{ans.feedback}</p>
                            
                            {ans.suggestions?.length > 0 && (
                              <ul className="space-y-1">
                                 {ans.suggestions.map((sug, i) => (
-                                   <li key={i} className="flex gap-2 text-sm text-indigo-300 items-start">
-                                      <ChevronRight className="w-4 h-4 text-indigo-500 shrink-0 mt-0.5" /> {sug}
+                                   <li key={i} className="flex gap-2 text-sm text-gray-300 items-start">
+                                      <ChevronRight className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" /> {sug}
                                    </li>
                                 ))}
                              </ul>

@@ -2,7 +2,15 @@ import Navbar from "./Navbar";
 
 function Layout({ children, pageTitle }) {
   return (
-    <div className="min-h-screen text-white font-sans selection:bg-indigo-500/30 flex flex-col">
+    <div 
+      className="min-h-screen text-[#FFFFFF] font-sans selection:bg-yellow-500/30 flex flex-col bg-black"
+      style={{
+        background: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('/ai-face.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <Navbar />
 
       <main className="flex-1 pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10">
